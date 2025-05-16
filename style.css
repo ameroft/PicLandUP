@@ -747,7 +747,7 @@ html {
         padding: 15px 20px;
     }
     
- 
+
 }
    @media (max-width: 768px) {
     .nav-container {
@@ -774,6 +774,23 @@ html {
     .main-nav a:hover,
     .auth-links a:hover {
         background: rgba(76, 175, 80, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Основные пункты меню */
+    .main-nav a {
+        margin-bottom: 0px; /* Расстояние между "Главная" и "Новый пост" */
+    }
+
+    /* Кнопки авторизации */
+    .auth-links a {
+        margin-top: 5px; /* Расстояние между "Войти" и "Зарегистрироваться" */
+    }
+
+    /* Расстояние между группами */
+    .auth-links {
+        margin-top: -115px; /* Общее расстояние между последним основным и первым auth пунктом */
     }
 }
     
