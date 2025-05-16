@@ -747,15 +747,7 @@ html {
         padding: 15px 20px;
     }
     
-    .logo {
-        font-size: 28px; /* Чуть уменьшаем лого */
-        z-index: 1002; /* Чтобы был выше меню */
-        position: relative;
-    }
-    
-    .nav-container.active {
-        padding-top: 100px; /* Даем место для крестика */
-    }
+ 
 }
    
     
