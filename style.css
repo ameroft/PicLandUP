@@ -749,7 +749,33 @@ html {
     
  
 }
-   
+   @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 5px; /* Минимальное расстояние между пунктами */
+        padding: 70px 15px 15px;
+    }
+
+    .main-nav, 
+    .auth-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .main-nav a,
+    .auth-links a {
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: rgba(0,0,0,0.03);
+        transition: all 0.2s;
+    }
+
+    .main-nav a:hover,
+    .auth-links a:hover {
+        background: rgba(76, 175, 80, 0.1);
+    }
+}
     
     /* Мобильные стили для странички с постом */
         @media (max-width: 768px) {
