@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Попытка входа:', { email, password, remember });
 
             // Перенаправление после успешного входа
-            // window.location.href = 'index.html';
+            window.location.href = 'profile.html';
         });
     }
 
