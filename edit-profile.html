@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicLand - Редактирование профиля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/edit-profile.css">
+</head>
+<body>
+
+
+ <header>
+      <div class="header-container">
+          <a href="index.html" class="logo">PicLand</a>
+
+          <button class="burger-btn" id="burgerBtn">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+          </button>
+          
+         <div class="nav-container" id="navContainer">
+    <!-- Основное меню -->
+     
+    <nav class="main-nav">
+        
+        <a href="index.html">Главная</a>
+        <a href="new-post.html">Новый пост</a>
+    </nav>
+    
+    <!-- Кнопки авторизации -->
+    <div class="user-links">
+        <a href="login.html" id="login-btn">Выйти</a>
+         <a href="profile.html" class="username">Ваня Петушков</a>
+    </div>
+</div>
+
+          <div class="overlay" id="overlay"></div>
+      </div>
+  </header>
+
+    <div class="edit-profile-container">
+        <h1 class="edit-title">Редактировать профиль</h1>
+
+        <div class="profile-edit-section">
+            <div class="avatar-edit">
+                <img src="img/2.jpg" alt="Аватар" class="avatar-large">
+                <button class="btn btn-avatar">Изменить аватар</button>
+            </div>
+
+            <div class="profile-edit-fields">
+                <div class="name-section">
+                    <div class="form-group name-field">
+                        <label>Имя</label>
+                        <input type="text" value="Ваня Петушков">
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Логин</label>
+                    <input type="text" value="Ваня Петушков" disabled>
+                </div>
+
+                <div class="form-group bio-group">
+                    <label>Обо мне</label>
+                    <textarea rows="4">Фотограф-любитель, путешественник</textarea>
+
+                </div>
+
+                <div class="info-grid">
+                    <div class="form-group">
+                        <label>Электронная почта</label>
+                        <input type="email" value="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Дата рождения</label>
+                        <input type="date" value="2003-05-15">
+                    </div>
+                    <div class="form-group">
+                        <label>Дата создания</label>
+                        <input type="text" value="15.05.2025" disabled>
+                    </div>
+                        <button class="btn btn-green save-btn">Сохранить</button>
+
+                </div>
+
+                <div class="password-section">
+                    <h3>Изменить пароль</h3>
+                    <div class="form-group">
+                        <label>Текущий пароль</label>
+                        <input type="password" placeholder="Введите текущий пароль">
+                    </div>
+                    <div class="form-group">
+                        <label>Новый пароль</label>
+                        <input type="password" placeholder="Введите новый пароль">
+                    </div>
+                    <div class="form-group">
+                        <label>Подтвердите пароль</label>
+                        <input type="password" placeholder="Повторите новый пароль">
+                    </div>
+                    <button class="btn btn-purple change-password">Изменить пароль</button>
+                </div>
+
+                <div class="delete-account-section">
+
+                    <button class="btn btn-danger delete-account">Удалить аккаунт</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/edit-profile.js"></script>
+
+
+     <script>
+//  код для мобильного меню
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navContainer = document.getElementById('navContainer');
+    const overlay = document.getElementById('overlay');
+
+    if (burgerBtn && navContainer && overlay) {
+        burgerBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = 
+                navContainer.classList.contains('active') ? 'hidden' : '';
+        });
+
+        overlay.addEventListener('click', function() {
+            burgerBtn.classList.remove('active');
+            navContainer.classList.remove('active');
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.nav-container a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                navContainer.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});</script>
+</body>
+</html>

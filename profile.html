@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicLand - Мой профиль</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+ <header>
+      <div class="header-container">
+          <a href="index.html" class="logo">PicLand</a>
+
+          <button class="burger-btn" id="burgerBtn">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+          </button>
+          
+         <div class="nav-container" id="navContainer">
+    <!-- Основное меню -->
+     
+    <nav class="main-nav">     
+        <a href="index.html">Главная</a>
+        <a href="new-post.html">Новый пост</a>
+    </nav>
+    
+    <!-- Кнопки авторизации -->
+    <div class="user-links">
+        <a href="login.html" id="login-btn">Выйти</a>
+         <a href="profile.html" class="username">Ваня Петушков</a>
+    </div>
+</div>
+
+          <div class="overlay" id="overlay"></div>
+      </div>
+  </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="img/2.jpg" alt="Аватар" class="avatar">
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">Ваня Петушков</h1>
+                <p class="profile-bio">Фотограф-любитель, путешественник</p>
+            <a href="edit-profile.html" class="btn btn-green edit-profile">Редактировать профиль</a>
+            </div>
+        </div>
+
+        <div class="profile-content">
+      <div class="posts-header">
+          <h2 class="section-title">Мои посты</h2>
+          <h2 class="section-title">
+      <a href="post-management.html" class="btn btn-outline manage-posts-btn">Управление постами</a>
+  </h2>
+      </div>
+
+      <div class="user-posts">
+          <!-- Посты будут здесь -->
+          <div class="post">
+              <img src="img/mypost1.jpg" alt="Мой пост">
+              <div class="post-info">
+                  <h3>Обезьяна</h3>
+                  <p class="post-date">15 мая 2023</p>
+                  <p class="post-likes">❤️ 124</p>
+              </div>
+          </div>
+
+          <div class="post">
+              <img src="img/mypost2.jpg" alt="Мой пост">
+              <div class="post-info">
+                  <h3>Мой кот</h3>
+                  <p class="post-date">10 мая 2023</p>
+                  <p class="post-likes">❤️ 89</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <script src="js/script.js"></script>
+
+
+     <script>
+//  код для мобильного меню
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navContainer = document.getElementById('navContainer');
+    const overlay = document.getElementById('overlay');
+
+    if (burgerBtn && navContainer && overlay) {
+        burgerBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = 
+                navContainer.classList.contains('active') ? 'hidden' : '';
+        });
+
+        overlay.addEventListener('click', function() {
+            burgerBtn.classList.remove('active');
+            navContainer.classList.remove('active');
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.nav-container a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                navContainer.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});</script>
+</body>
+</html>
